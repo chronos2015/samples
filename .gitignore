@@ -5,3 +5,7 @@
 out
 Debug
 Release
+
+# Visual Studio Codeのフォルダをコミットしないため
+# プロジェクト管理用のフォルダ
+.vscode
