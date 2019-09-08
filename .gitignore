@@ -5,6 +5,8 @@
 out
 Debug
 Release
+# Nugetのパッケージの管理フォルダ
+packages
 
 # Visual Studio Codeのフォルダをコミットしないため
 # プロジェクト管理用のフォルダ
