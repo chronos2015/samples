@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="BeforeThriftCompile" BeforeTargets="ThriftCompile" Returns="@(Compile);">
+    <ItemGroup>
+      <ThriftInput Include="@(Compile)" Condition="'%(Extension)'=='.thrift'" />
+    </ItemGroup>
+    <ItemGroup>
+      <AvailableItemName Include="ThriftInput" />
+      <ThriftOutput Include="@(ThriftInput->'$(IntermediateOutputPath)%(Filename).cs')" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="@(ThriftInput)" />
+    </ItemGroup>
+  </Target>
+  <Target
+      Name="CLexCompile"
+      BeforeTargets="BeforeCompile"
+      DependsOnTargets="BeforeThriftCompile"
+      Condition="'$(Language)' == 'C#'"
+      Inputs="@(ThriftInput)"
+      Outputs="@(ThriftOutput);"
+      Returns="@(Compile);"
+      >
+    <Exec 
+      Command="thrift.exe --gen csharp -out &quot;$(ProjectDir)$(IntermediateOutputPath)\&quot; &quot;%(ThriftInput.RootDir)%(ThriftInput.Directory)%(ThriftInput.Filename)%(ThriftInput.Extension)&quot;" 
+      WorkingDirectory="$(MSBuildThisFileDirectory)" 
+      />
+    <ItemGroup>
+      <Compile Include="@(ThriftOutput)" />
+    </ItemGroup>
+  </Target>
+</Project>
