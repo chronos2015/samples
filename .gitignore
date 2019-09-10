@@ -11,3 +11,6 @@ packages
 # Visual Studio Codeのフォルダをコミットしないため
 # プロジェクト管理用のフォルダ
 .vscode
+
+# Pythonのキャッシュをコミットしない
+__pycache__
