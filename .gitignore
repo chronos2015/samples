@@ -12,5 +12,6 @@ packages
 # プロジェクト管理用のフォルダ
 .vscode
 
-# Pythonのキャッシュをコミットしない
-__pycache__
+# Pythonのキャッシュをコミットする
+# 2019.09.11 __pycache__のみしかもっていない情報があるのかimportエラーが発生した為、変更
+#__pycache__
