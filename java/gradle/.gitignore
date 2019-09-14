@@ -10,5 +10,9 @@ home
 *.iml
 *.ipr
 *.iws
+.idea
+gradle
+gradlew
+gradlew.bat
 # コマンドのビルド結果をコミットしないため
 build.log
