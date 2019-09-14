@@ -2,3 +2,13 @@
 .gradle
 build
 home
+# eclipseの管理フォルダをコミットしないため
+.project
+.classpath
+.settings
+# ideaの管理フォルダをコミットしないため
+*.iml
+*.ipr
+*.iws
+# コマンドのビルド結果をコミットしないため
+build.log
