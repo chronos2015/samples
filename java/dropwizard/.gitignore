@@ -1,0 +1,9 @@
+# gradleの管理フォルダ/ビルド結果をコミットしないため
+.gradle
+build
+home
+build.log
+.idea
+gradle
+gradlew
+gradlew.bat
