@@ -4,8 +4,11 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
-	// mavenCentral()
-	maven { url 'repo' }
+	if (file('repo').exists()) {
+		maven { url 'repo' }
+	} else {
+		mavenCentral()
+	}
 }
 
 dependencies {
