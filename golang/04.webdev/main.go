@@ -61,5 +61,3 @@ func main() {
 
 	fmt.Println("end")
 }
-
-// B3mufJTE
