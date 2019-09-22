@@ -18,15 +18,26 @@ target_include_directories(
 	"${WX_WIDGETS_DIR}/include"
 )
 
-target_include_directories(
-	Clipboard
-	PUBLIC
-	"${WX_WIDGETS_DIR}/lib/vc_x64_lib/mswud"
-)
-
-file(
-	GLOB_RECURSE wxWidgetLibrary
-	"${WX_WIDGETS_DIR}/lib/vc_x64_lib/*.lib")
+message(${CMAKE_SYSTEM_PROCESSOR})
+if(${CMAKE_STATIC_LINKER_FLAGS} STREQUAL "/machine:x64")
+	file(
+		GLOB_RECURSE wxWidgetLibrary
+		"${WX_WIDGETS_DIR}/lib/vc_x64_lib/*.lib")
+	target_include_directories(
+		Clipboard
+		PUBLIC
+		"${WX_WIDGETS_DIR}/lib/vc_x64_lib/mswu"
+	)
+else()
+	file(
+		GLOB_RECURSE wxWidgetLibrary
+		"${WX_WIDGETS_DIR}/lib/vc_lib/*.lib")
+	target_include_directories(
+		Clipboard
+		PUBLIC
+		"${WX_WIDGETS_DIR}/lib/vc_lib/mswu"
+	)
+endif()
 
 target_link_libraries(
 	Clipboard
