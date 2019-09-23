@@ -4,8 +4,6 @@ project(
 	Clipboard
 )
 
-# D:\3_thiredpaty\wxWidgets\wxWidgets-3.1.2\include
-
 add_executable(
 	Clipboard
 	WIN32
