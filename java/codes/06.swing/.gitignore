@@ -1,0 +1,20 @@
+# gradleの管理フォルダ/ビルド結果をコミットしないため
+.gradle
+build
+home
+# eclipseの管理フォルダをコミットしないため
+.project
+.classpath
+.settings
+# ideaの管理フォルダをコミットしないため
+*.iml
+*.ipr
+*.iws
+.idea
+gradle
+gradlew
+gradlew.bat
+# コマンドのビルド結果をコミットしないため
+build.log
+# evosuiteのログをコミットしないため
+.evosuite
