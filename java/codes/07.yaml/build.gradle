@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+	if (file('repo').exists()) {
+		maven { url 'repo' }
+	} else {
+		mavenCentral()
+	}
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.yaml/snakeyaml
+	compile group: 'org.yaml', name: 'snakeyaml', version: '1.25'
+}
