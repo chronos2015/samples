@@ -1,0 +1,17 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>RestartPlugin</name>
+  <version>1.0</version>
+  <vendor email="someone@example.com" url="http://www.example.com">some one...</vendor>
+  <description>Restart IntellijIdea 123456789012345678901234567890</description>
+  <change-notes>Init Version 1234567890123456789012345678901234567890</change-notes>
+  <idea-version since-build="173.0"/>
+  <extensions defaultExtensionNs="com.intellij">
+  </extensions>
+  <actions>
+    <action id="RestartAction" class="restartPlugin.RestartAction" text="Restart">
+      <add-to-group group-id="FileMenu" anchor="before" relative-to-action="Exit"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt R"/>
+    </action>
+  </actions>
+</idea-plugin>
