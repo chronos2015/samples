@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+	if (file('repo').exists()) {
+		maven { url 'repo' }
+	} else {
+		mavenCentral()
+		maven { url 'https://jcenter.bintray.com/'}
+	}
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.jetbrains.jediterm/jediterm-pty
+	compile group: 'org.jetbrains.jediterm', name: 'jediterm-pty', version: '2.22'
+
+	// https://mvnrepository.com/artifact/org.jetbrains.pty4j/pty4j
+	compile group: 'org.jetbrains.pty4j', name: 'pty4j', version: '0.8.2'
+
+	// https://mvnrepository.com/artifact/com.google.guava/guava
+	compile group: 'com.google.guava', name: 'guava', version: '28.1-jre'
+
+	// https://mvnrepository.com/artifact/log4j/log4j
+	compile group: 'log4j', name: 'log4j', version: '1.2.17'
+
+	// https://mvnrepository.com/artifact/org.jetbrains/annotations
+	compile group: 'org.jetbrains', name: 'annotations', version: '16.0.1'
+
+	// https://mvnrepository.com/artifact/junit/junit
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+application {
+	mainClassName = 'org.example.jediterm.Example'
+//	mainClassName = 'com.jediterm.pty.PtyMain'
+}
