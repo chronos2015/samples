@@ -37,6 +37,7 @@ public class Example {
 
                 if (UIUtil.isWindows) {
                     command = new String[]{"cmd.exe"};
+                    envs.put("TERM", "xterm");
                 } else {
                     command = new String[]{"/bin/bash", "--login"};
                     envs.put("TERM", "xterm");
